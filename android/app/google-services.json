@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191326664755",
+    "project_id": "ecell-mes-app",
+    "storage_bucket": "ecell-mes-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191326664755:android:cc34a51023909b03fd8b46",
+        "android_client_info": {
+          "package_name": "com.example.ecell_mes_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191326664755-7p50209o05t2nn8mja641cestjfip2j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWRM8VL9YVlCVBw541Bjtp1jDNu1CBpJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191326664755-7p50209o05t2nn8mja641cestjfip2j2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
