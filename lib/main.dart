@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'homepage.dart';
+import 'loginpage.dart';
+import 'eventspage.dart';
+import 'splashscreen.dart';
 
-void main()
-{
-  runApp(const HomePage());
+void main() {
+  runApp(MaterialApp(home: SplashScreen()));
 }
-
-
-
