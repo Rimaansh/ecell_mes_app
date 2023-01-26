@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
               colors: [Colors.redAccent, Colors.grey],
             ),
           ),
-        child: EventsPage(),
+          child: EventsPage(),
         ),
         appBar: AppBar(
           backgroundColor: Colors.redAccent,

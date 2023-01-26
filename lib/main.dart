@@ -5,5 +5,5 @@ import 'eventspage.dart';
 import 'splashscreen.dart';
 
 void main() {
-  runApp(MaterialApp(home: SplashScreen()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
 }

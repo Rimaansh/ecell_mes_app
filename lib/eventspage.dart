@@ -33,7 +33,7 @@ class _EventsPageState extends State<EventsPage> {
     return Scaffold(
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
+            crossAxisCount: 1,
             childAspectRatio: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
@@ -43,9 +43,13 @@ class _EventsPageState extends State<EventsPage> {
           return Container(
             margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.blueAccent, borderRadius: BorderRadius.circular(10)),
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.circular(10)),
             child: ListTile(
-              title: Text(event, style: TextStyle(color: Colors.white),),
+              title: Text(
+                event,
+                style: TextStyle(color: Colors.white),
+              ),
               trailing: IconButton(
                 icon: _selectedEvents.contains(event)
                     ? Icon(Icons.check_box)

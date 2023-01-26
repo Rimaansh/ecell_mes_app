@@ -35,49 +35,61 @@ class _LoginInState extends State<LoginIn> {
       body: Container(
         child: _isLoggedIn
             ? Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.network(_userObj.photoUrl!),
-              const SizedBox(height: 20,),
-              Text(_userObj.displayName!),
-              const SizedBox(height: 20,),
-              Text(_userObj.email),
-              const SizedBox(height: 20,),
-              MaterialButton(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.network(_userObj.photoUrl!),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(_userObj.displayName!),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(_userObj.email),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    MaterialButton(
+                      onPressed: () {
+                        _googleSignIn.signOut().then((value) {
+                          setState(() {
+                            _isLoggedIn = false;
+                          });
+                        }).catchError((e) {});
+                      },
+                      height: 50,
+                      minWidth: 100,
+                      color: Colors.red,
+                      child: const Text(
+                        'Logout',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            : Center(
+                child: MaterialButton(
                 onPressed: () {
-                  _googleSignIn.signOut().then((value) {
+                  _googleSignIn.signIn().then((userData) {
                     setState(() {
-                      _isLoggedIn = false;
+                      _isLoggedIn = true;
+                      _userObj = userData!;
                     });
-                  }).catchError((e) {});
+                  }).catchError((e) {
+                    print(e);
+                  });
                 },
                 height: 50,
                 minWidth: 100,
                 color: Colors.red,
-                child: const Text('Logout',style: TextStyle(color: Colors.white),),
-              )
-            ],
-          ),
-        ) : Center(
-            child: MaterialButton(
-              onPressed: () {
-                _googleSignIn.signIn().then((userData) {
-                  setState(() {
-                    _isLoggedIn = true;
-                    _userObj = userData!;
-                  });
-                }).catchError((e) {
-                  print(e);
-                });
-              },
-              height: 50,
-              minWidth: 100,
-              color: Colors.red,
-              child: const Text('Google Signin',style: TextStyle(color: Colors.white),),
-            )
-        ),
+                child: const Text(
+                  "Google Sign-in",
+                  style: TextStyle(color: Colors.white),
+                ),
+              )),
       ),
     );
   }
